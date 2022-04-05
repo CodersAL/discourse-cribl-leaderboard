@@ -1,0 +1,7 @@
+en:
+  site_settings:
+    cribl_leaderboard_enabled: "Enable the Mentionables plugin"
+    cribl_leaderboard_s3_query_output_location: "Output location for query results in S3"
+    cribl_leaderboard_s3_query_database_name: "Name of Athena database where views exist"
+    cribl_leaderboard_custom_start_date: "Custom tab date range start date"
+    cribl_leaderboard_custom_end_date: "Custom tab date range end date"

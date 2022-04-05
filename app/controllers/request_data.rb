@@ -12,13 +12,11 @@ class ::CriblLeaderboard::RequestDataController < ::ApplicationController
 
   def custom
     raise Discourse::InvalidAccess.new unless current_user
-    params = self.custom_daterange_params
 
-    results = ::CriblLeaderboard::AthenaQueries.custom_date_range(params[:start_date],params[:end_date])
+    start_date = SiteSetting.cribl_leaderboard_custom_start_date
+    end_date = SiteSetting.cribl_leaderboard_custom_end_date
+
+    results = ::CriblLeaderboard::AthenaQueries.custom_date_range(start_date,end_date)
     render json: results
-  end
-
-  def custom_daterange_params
-    params.permit(:start_date, :end_date)
   end
 end
