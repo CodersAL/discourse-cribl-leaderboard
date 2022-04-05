@@ -1,0 +1,16 @@
+plugins:
+  cribl_leaderboard_enabled:
+    client: true
+    default: true
+  cribl_leaderboard_s3_query_output_location:
+    client: false
+    default: ''
+  cribl_leaderboard_s3_query_database_name:
+    client: false
+    default: ''
+  cribl_leaderboard_custom_start_date:
+    client: false
+    default: '2022-04-03'
+  cribl_leaderboard_custom_end_date:
+    client: false
+    default: '2022-04-04'
