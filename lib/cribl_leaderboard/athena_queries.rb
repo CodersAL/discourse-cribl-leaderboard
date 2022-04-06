@@ -28,7 +28,7 @@ class ::CriblLeaderboard::AthenaQueries
 
     result = Discourse.cache.fetch(cache_key, expires_in: 1.hours) do
       self.run_query <<-SQL
-        SELECT id, "ROW_NUMBER"() OVER (ORDER BY points DESC) mrank, username, name, sub.points 
+        SELECT id, "ROW_NUMBER"() OVER (ORDER BY points DESC) mrank, username, name, avatar_template, active, sub.points
         FROM users INNER JOIN (SELECT user_id, SUM(CAST(points AS INT)) AS points FROM points
         WHERE _time > "to_unixtime"(DATE('#{start_date}'))
         AND _time < "to_unixtime"(DATE('#{end_date}'))
