@@ -1,0 +1,12 @@
+en:
+  js:
+    cribl_leaderboard:
+      title: 'Leaderboard'
+      nav:
+        today: 'Today'
+        quarter: 'Current Quarter'
+        custom: 'Custom'
+      fields:
+        rank: 'Rank'
+        name: 'Name'
+        points: 'Points'
