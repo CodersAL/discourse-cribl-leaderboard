@@ -6,6 +6,7 @@ const Leaderboard = EmberObject.extend({});
 Leaderboard.reopenClass({
   buildLeaderboardData(type, user) {
     return ajax(`/cribl_leaderboard/${type}.json`).then((data) => {
+      if (!data) return;
       const { request_data } = data;
 
       const props = request_data.map((item) => {
