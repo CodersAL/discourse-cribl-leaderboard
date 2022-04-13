@@ -7,3 +7,4 @@ en:
     cribl_leaderboard_custom_end_date: 'Custom tab date range end date'
     cribl_hamburger_leaderboard_button: 'Show a button to the leaderboard in the hamburger menu'
     cribl_nav_leaderboard_button: 'Show a button to the leaderboard in the main navigation bar'
+    cribl_leaderboard_custom_title: 'The name of the custom leaderboard tab.'

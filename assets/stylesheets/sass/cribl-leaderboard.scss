@@ -1,0 +1,62 @@
+.cribl-leaderboard-list {
+  width: 100%;
+
+  td {
+    padding: 8px;
+  }
+
+  tr:hover {
+    background-color: var(--primary-very-low);
+  }
+
+  .me {
+    background-color: var(--highlight-low-or-medium);
+  }
+
+  .rank {
+    width: 50px;
+  }
+
+  .user-info {
+    // width: 50%;
+    margin-bottom: 0;
+    a {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+      .user-detail {
+        color: var(--primary-medium);
+        display: flex;
+        flex-direction: column;
+        transition: color 0.25s ease;
+        .name {
+          font-weight: bold;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+
+      &:hover {
+        .user-detail {
+          color: var(--primary-high);
+        }
+      }
+    }
+  }
+
+  .relative-rank {
+    &.value-positive {
+      color: var(--success);
+    }
+
+    &.value-negative {
+      color: var(--danger);
+    }
+
+    &.value-neutral {
+      color: var(--primary);
+    }
+  }
+}

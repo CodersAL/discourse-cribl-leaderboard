@@ -14,6 +14,9 @@ plugins:
   cribl_leaderboard_custom_end_date:
     client: false
     default: '2022-04-04'
+  cribl_leaderboard_custom_title:
+    client: true
+    default: 'Custom'
   cribl_hamburger_leaderboard_button:
     client: true
     default: true

@@ -1,0 +1,23 @@
+<td class='rank'>{{item.rank}}</td>
+
+<td class='user-info'>
+  <a href={{item.user.path}} data-user-card={{item.user.username}}>
+    {{avatar item.user imageSize='large'}}
+    <div class='user-detail'>
+      <span class='name'>{{item.user.name}}</span>
+      <span class='username'>{{item.user.username}}</span>
+    </div>
+  </a>
+</td>
+
+{{#if isTodays}}
+  <td class='relative-rank {{displayRelativeRank.class}}'>
+    <span class='number'>{{displayRelativeRank.rank}}</span>
+    <span class='icon'>{{d-icon displayRelativeRank.icon}}</span>
+  </td>
+{{/if}}
+
+<td class='points'>{{item.points}}</td>
+<td class='timestamp'>
+  {{format-date item.timestamp format='tiny'}}
+</td>

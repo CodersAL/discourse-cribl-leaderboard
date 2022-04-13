@@ -11,37 +11,9 @@
     }}
     {{nav-item
       route='cribl_leaderboard.custom'
-      label='cribl_leaderboard.nav.custom'
+      i18nLabel=siteSettings.cribl_leaderboard_custom_title
     }}
   </ul>
 </nav>
 
 {{outlet}}
-
-{{log model}}
-<table class='table grid leaderboard-list'>
-  <thead>
-    {{table-header-toggle
-      field='rank'
-      labelKey='cribl_leaderboard.fields.rank'
-      order=order
-      asc=asc
-      automatic=true
-    }}
-    {{table-header-toggle
-      field='name'
-      labelKey='cribl_leaderboard.fields.name'
-      order=order
-      asc=asc
-      automatic=true
-    }}
-    {{table-header-toggle
-      field='points'
-      labelKey='cribl_leaderboard.fields.points'
-      order=order
-      asc=asc
-      automatic=true
-    }}
-    <th>&nbsp;</th>
-  </thead>
-</table>
