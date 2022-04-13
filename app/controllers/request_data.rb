@@ -2,7 +2,11 @@ class ::CriblLeaderboard::RequestDataController < ::ApplicationController
 
   def todays
     raise Discourse::InvalidAccess.new unless current_user
-    render json: ::CriblLeaderboard::AthenaQueries.todays
+    params.permit(:user_id)
+
+    user_id = params[:user_id] || nil
+
+    render json: ::CriblLeaderboard::AthenaQueries.todays(user_id)
   end
 
   def quarters

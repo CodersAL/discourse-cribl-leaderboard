@@ -4,12 +4,16 @@ class ::CriblLeaderboard::AthenaQueries
 
   @@conn = nil
   
-  def self.todays
-    cache_key = "cribl_todays_ranking_with_move"
+  def self.todays(user_id)
+    if user_id.nil?
+      cache_key = "cribl_todays_ranking_with_move"
+      sql = "SELECT * FROM todays_ranking_with_move"
+    else
+      cache_key = "cribl_todays_ranking_with_move_#{user_id}"
+      sql = "SELECT * FROM todays_ranking_with_move WHERE id = #{user_id}"
+    end
 
-    sql = "SELECT * FROM todays_ranking_with_move"
-
-    result = Discourse.cache.fetch(cache_key, expires_in: 1.hours) do
+    result = Discourse.cache.fetch(cache_key, expires_in: 1.minutes) do
       return self.run_query(sql)
     end
   end
