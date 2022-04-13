@@ -5,6 +5,7 @@ Discourse::Application.routes.append do
 end
 
 ::CriblLeaderboard::Engine.routes.draw do
+  get '/' => 'request_data#todays'
   get '/todays' => 'request_data#todays'
   get '/todays/:user_id' => 'request_data#todays'
   get '/quarters' => 'request_data#quarters'
