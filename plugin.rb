@@ -10,6 +10,11 @@ gem 'athens', '0.4.0'  # https://github.com/getletterpress/athens
 enabled_site_setting :cribl_leaderboard_enabled
 register_asset 'stylesheets/sass/cribl-leaderboard.scss'
 
+if respond_to?(:register_svg_icon)
+  register_svg_icon "long-arrow-alt-up"
+  register_svg_icon "long-arrow-alt-down"
+end
+
 after_initialize do  
   %w[
     ../lib/cribl_leaderboard/engine.rb
