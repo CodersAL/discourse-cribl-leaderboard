@@ -12,4 +12,6 @@ en:
         name: 'Name'
         points: 'Current Score'
         timestamp: 'Time Stamp'
+      profile:
+        points: 'points'
       no_results: 'No results found.'
