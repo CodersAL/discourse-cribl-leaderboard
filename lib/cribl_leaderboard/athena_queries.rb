@@ -13,7 +13,7 @@ class ::CriblLeaderboard::AthenaQueries
       sql = "SELECT * FROM todays_ranking_with_move WHERE id = #{user_id}"
     end
 
-    result = Discourse.cache.fetch(cache_key, expires_in: 1.minutes) do
+    result = Discourse.cache.fetch(cache_key, expires_in: 1.hours) do
       return self.run_query(sql)
     end
   end
