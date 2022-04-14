@@ -7,7 +7,7 @@ class ::CriblLeaderboard::LeaderboardController < ::ApplicationController
 
     user_id = params[:user_id] || nil
     period = params[:period] || "today"
-    page = params[:page] || 0
+    page = params[:page].to_i
     more_params = params.slice(:period, :user_id).permit!
     more_params[:page] = page + 1
 
