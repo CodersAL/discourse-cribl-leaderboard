@@ -10,7 +10,7 @@ export default apiInitializer('0.11.1', (api) => {
   if (siteSettings.cribl_hamburger_leaderboard_button) {
     api.decorateWidget('hamburger-menu:generalLinks', () => {
       return {
-        route: 'cribl_leaderboard',
+        route: 'cribl.leaderboard',
         label: 'cribl_leaderboard.title',
         className: 'cribl-leaderboard-link',
       };
@@ -19,9 +19,9 @@ export default apiInitializer('0.11.1', (api) => {
 
   if (siteSettings.cribl_nav_leaderboard_button) {
     api.addNavigationBarItem({
-      name: 'cribl_leaderboard',
+      name: 'cribl.leaderboard',
       displayName: I18n.t('cribl_leaderboard.title'),
-      href: '/cribl_leaderboard',
+      href: '/cribl/leaderboard',
     });
   }
 });

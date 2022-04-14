@@ -1,0 +1,22 @@
+<h1>{{i18n 'cribl_leaderboard.title'}}</h1>
+<nav>
+  <ul class='nav nav-pills'>
+    <li>
+      {{#link-to 'cribl.leaderboard' (query-params period='today')}}{{i18n
+          'cribl_leaderboard.nav.today'
+        }}{{/link-to}}
+    </li>
+    <li>
+      {{#link-to 'cribl.leaderboard' (query-params period='quarter')}}{{i18n
+          'cribl_leaderboard.nav.quarter'
+        }}{{/link-to}}
+    </li>
+    <li>
+      {{#link-to 'cribl.leaderboard' (query-params period='custom')}}{{i18n
+          'cribl_leaderboard.nav.custom'
+        }}{{/link-to}}
+    </li>
+  </ul>
+</nav>
+
+{{outlet}}

@@ -1,4 +1,4 @@
-import { ajax } from 'discourse/lib/ajax';
+// import { ajax } from 'discourse/lib/ajax';
 
 export default {
   shouldRender(args, component) {
@@ -8,11 +8,11 @@ export default {
   setupComponent(args, component) {
     this.set('classNames', ['linked-stat']);
 
-    ajax(`/cribl_leaderboard/todays/${args.user.username}.json`).then(
-      ({ request_data }) => {
-        const points = request_data[0].todays_points;
-        component.set('points', points);
-      }
-    );
+    // ajax(`/cribl_leaderboard/todays/${args.user.username}.json`).then(
+    //   ({ request_data }) => {
+    //     const points = request_data[0].todays_points;
+    //     component.set('points', points);
+    //   }
+    // );
   },
 };
