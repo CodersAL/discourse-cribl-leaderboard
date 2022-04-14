@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Discourse::Application.routes.append do
-  mount ::CriblLeaderboard::Engine, at: 'cribl_leaderboard'
+  mount ::CriblLeaderboard::Engine, at: 'cribl'
 end
 
 ::CriblLeaderboard::Engine.routes.draw do
