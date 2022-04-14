@@ -19,7 +19,7 @@ after_initialize do
   %w[
     ../lib/cribl_leaderboard/engine.rb
     ../lib/cribl_leaderboard/athena_queries.rb
-    ../app/controllers/request_data.rb
+    ../app/controllers/leaderboard.rb
     ../config/routes.rb
   ].each do |key|
     load File.expand_path(key, __FILE__)
