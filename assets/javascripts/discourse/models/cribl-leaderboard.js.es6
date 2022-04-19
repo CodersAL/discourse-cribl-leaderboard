@@ -25,12 +25,17 @@ Leaderboard.reopenClass({
 
   loadMore(loadMoreUrl) {
     return ajax(loadMoreUrl).then((result) => {
+      if (!result) {
+        return;
+      }
       return this.buildLeaderboardData(result);
     });
   },
 
   buildLeaderboardData(result) {
-    if (!result) return;
+    if (!result.data || result.data === null) {
+      return;
+    }
     const { data, meta } = result;
     const currentUser = User.current() ? User.current() : null;
     const props = data.map((item) => {
