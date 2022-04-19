@@ -25,6 +25,7 @@ export default DiscourseRoute.extend({
     controller.setProperties({
       leaderboard: model.data.props,
       loadMoreUrl: model.meta.load_more_leaderboard,
+      leaderboardRowLimit: model.meta.total_rows_leaderboard,
     });
   },
 });
