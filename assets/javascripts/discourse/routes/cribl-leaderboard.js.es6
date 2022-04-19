@@ -22,8 +22,6 @@ export default DiscourseRoute.extend({
   },
 
   setupController(controller, model) {
-    console.log('controller', controller);
-    console.log('setupController (model)', model);
     controller.setProperties({
       leaderboard: model.data.props,
       loadMoreUrl: model.meta.load_more_leaderboard,
