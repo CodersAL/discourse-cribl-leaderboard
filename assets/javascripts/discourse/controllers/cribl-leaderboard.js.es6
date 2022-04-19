@@ -11,11 +11,6 @@ export default Controller.extend({
   isLoading: false,
   isLoadingMore: false,
 
-  @discourseComputed('loadMoreUrl')
-  canLoadMore(loadMoreUrl) {
-    return loadMoreUrl === null ? false : true;
-  },
-
   @discourseComputed('page', 'period')
   hasParams(page, period) {
     if (page && period) {
