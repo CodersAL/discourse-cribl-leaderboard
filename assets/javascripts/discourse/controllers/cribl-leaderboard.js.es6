@@ -28,13 +28,10 @@ export default Controller.extend({
 
     if (canLoadMore && !this.isLoadingMore) {
       this.set('isLoadingMore', true);
-      console.log('this', this);
       Leaderboard.loadMore(this.loadMoreUrl).then((result) => {
-        this.setProperties({
-          leaderboard: result.data.props,
-          loadMoreUrl: result.meta.load_more_leaderboard || null,
-          isLoadingMore: false,
-        });
+        leaderboard.addObjects(result.data.props);
+        this.set('loadMoreUrl', result.meta.load_more_leaderboard || null);
+        this.set('isLoadingMore', false);
       });
     }
   },
