@@ -15,3 +15,4 @@ en:
       profile:
         points: 'points'
       no_results: 'No results found.'
+      hint_alert: 'Select a period from the navigation tabs above to view leaderboard statistics.'

@@ -1,6 +1,12 @@
-{{cribl-leaderboard-table
-  leaderboard=leaderboard
-  period=period
-  isLoading=isLoading
-  loadMore=(action 'loadMore')
-}}
+{{#if hasParams}}
+  {{cribl-leaderboard-table
+    leaderboard=leaderboard
+    period=period
+    isLoading=isLoading
+    loadMore=(action 'loadMore')
+  }}
+{{else}}
+  <div class='alert alert-info'>
+    <p>{{i18n 'cribl_leaderboard.hint_alert'}}</p>
+  </div>
+{{/if}}
