@@ -1,5 +1,5 @@
 class ::CriblLeaderboard::LeaderboardController < ::ApplicationController
-  PAGE_SIZE = 5
+  PAGE_SIZE = 50
 
   def index
     raise Discourse::InvalidAccess.new unless current_user
