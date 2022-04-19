@@ -22,7 +22,11 @@ export default Controller.extend({
 
   @action
   loadMore() {
-    if (this.canLoadMore && !this.isLoadingMore) {
+    const leaderboard = this.get('leaderboard');
+    const limit = this.get('leaderboardRowLimit');
+    const canLoadMore = leaderboard.length < limit;
+
+    if (canLoadMore && !this.isLoadingMore) {
       this.set('isLoadingMore', true);
       console.log('this', this);
       Leaderboard.loadMore(this.loadMoreUrl).then((result) => {
