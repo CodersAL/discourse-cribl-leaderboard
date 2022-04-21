@@ -23,7 +23,7 @@ Please approach authors with any questions.
 
 The following settings are required to be set up:
 
-Dicourse site settings:
+Discourse site settings:
 
 - `s3_access_key_id`
 - `s3_secret_access_key`
