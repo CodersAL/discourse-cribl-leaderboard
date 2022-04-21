@@ -27,10 +27,12 @@ after_initialize do
 
   Athens.configure do |config|
     config.output_location = SiteSetting.cribl_leaderboard_s3_query_output_location # Required
-    config.aws_access_key      = SiteSetting.s3_access_key_id
-    config.aws_secret_key      = SiteSetting.s3_secret_access_key
-    config.aws_region          = SiteSetting.s3_region
+    if !SiteSetting.s3_use_iam_profile
+      config.aws_access_key = SiteSetting.s3_access_key_id
+      config.aws_secret_key = SiteSetting.s3_secret_access_key
+    end
+    config.aws_region = SiteSetting.s3_region
     config.wait_polling_period = 0.25 # Optional - What period should we poll for the complete query?
-    config.result_encryption   = nil
+    config.result_encryption = nil
   end
 end
