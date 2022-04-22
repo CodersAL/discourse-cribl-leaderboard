@@ -8,3 +8,10 @@ en:
     cribl_hamburger_leaderboard_button: 'Show a button to the leaderboard in the hamburger menu'
     cribl_nav_leaderboard_button: 'Show a button to the leaderboard in the main navigation bar'
     cribl_leaderboard_custom_title: 'The name of the custom leaderboard tab.'
+  cribl:
+    errors:
+      blank_database_setting: "Please check settings, unable to make connection"
+      failed_database_connection: "Please check config, unable to make connection"
+      failed_query: "Failed query, please contact the admin"
+    connection:
+      cleared_connection: "Successfully cleared database connection"

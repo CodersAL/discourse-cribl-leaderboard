@@ -70,30 +70,42 @@ class ::CriblLeaderboard::AthenaQueries
   end
 
   def self.run_query(sql)
-    conn = self.confirm_connection
+    success, error, conn = self.confirm_connection
 
-    return false if !conn
+    return false, error, nil if !success
 
-    query = conn.execute(sql)
+    begin
+      query = conn.execute(sql)
+    rescue => e
+      return false, "#{I18n.t("cribl.errors.failed_query")}: #{e}", []
+    end
 
     query.wait
 
     if query.to_a.count > 1 then
-      return query.to_h
+      return true, nil, query.to_h
     else
-      return []
+      return true, nil, []
     end
   end
 
   def self.confirm_connection
-    if @@conn.nil? && !SiteSetting.cribl_leaderboard_s3_query_database_name.blank? then
-      @@conn = Athens::Connection.new(database: SiteSetting.cribl_leaderboard_s3_query_database_name)
-    else
-      if @@conn.nil?
-        return false
-      else
-        return @@conn
+    if SiteSetting.cribl_leaderboard_s3_query_database_name.blank?
+      return false, I18n.t("cribl.errors.blank_database_setting"), nil
+    elsif @@conn.nil?
+      begin
+        @@conn = Athens::Connection.new(database: SiteSetting.cribl_leaderboard_s3_query_database_name)
+        return true, nil, @@conn
+      rescue => e
+        return false, "#{I18n.t("cribl.errors.failed_database_connection")}: #{e}", nil
       end
+    else
+      return true, nil, @@conn
     end
   end 
+
+  def self.clear_connection
+    @@conn = nil
+    return I18n.t("cribl.connection.cleared_connection")
+  end
 end
