@@ -1,3 +1,5 @@
-{{#link-to 'cribl.leaderboard'}}
-  {{user-stat value=points label='cribl_leaderboard.profile.points'}}
-{{/link-to}}
+{{#if points}}
+  {{#link-to 'cribl.leaderboard'}}
+    {{user-stat value=points label='cribl_leaderboard.profile.points'}}
+  {{/link-to}}
+{{/if}}
