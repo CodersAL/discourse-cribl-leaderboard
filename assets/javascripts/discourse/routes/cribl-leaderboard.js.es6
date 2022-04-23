@@ -9,7 +9,6 @@ export default DiscourseRoute.extend({
   },
 
   model(params) {
-    console.log('model', params);
     this.controllerFor('cribl.leaderboard').set('isLoading', true);
     return Leaderboard.list(params).then((result) => {
       this.controllerFor('cribl.leaderboard').set('isLoading', false);

@@ -1,4 +1,5 @@
-// import { ajax } from 'discourse/lib/ajax';
+import { ajax } from 'discourse/lib/ajax';
+import { popupAjaxError } from 'discourse/lib/ajax-error';
 
 export default {
   shouldRender(args, component) {
@@ -8,11 +9,16 @@ export default {
   setupComponent(args, component) {
     this.set('classNames', ['linked-stat']);
 
-    // ajax(`/cribl_leaderboard/todays/${args.user.username}.json`).then(
-    //   ({ request_data }) => {
-    //     const points = request_data[0].todays_points;
-    //     component.set('points', points);
-    //   }
-    // );
+    ajax(`/cribl/leaderboard.json?period=today&user_id=${args.user.id}`)
+      .then(({ data }) => {
+        const points = data[0]?.points;
+
+        if (!points) {
+          component.set('points', null);
+        }
+
+        component.set('points', points);
+      })
+      .catch(popupAjaxError);
   },
 };
