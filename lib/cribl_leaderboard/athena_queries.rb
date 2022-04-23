@@ -76,16 +76,14 @@ class ::CriblLeaderboard::AthenaQueries
 
     begin
       query = conn.execute(sql)
+      query.wait
+      if query.to_a.count > 1 then
+        return true, nil, query.to_h
+      else
+        return true, nil, []
+      end
     rescue => e
       return false, "#{I18n.t("cribl.errors.failed_query")}: #{e}", []
-    end
-
-    query.wait
-
-    if query.to_a.count > 1 then
-      return true, nil, query.to_h
-    else
-      return true, nil, []
     end
   end
 

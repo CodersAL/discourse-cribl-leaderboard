@@ -1,6 +1,6 @@
 # name: discourse-cribl-leaderboard
 # about: A plugin that grabs Cribl community leaderboard data from S3 Athena and presents it on Disocourse
-# version: 0.3
+# version: 0.4
 # authors: Robert Barrow, Keegan George
 # url: https://github.com/paviliondev/discourse-cribl-leaderboard
 
