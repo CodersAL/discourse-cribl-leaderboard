@@ -32,6 +32,20 @@ class ::CriblLeaderboard::AthenaQueries
     end
   end
 
+  def self.total(user_id)
+    if user_id.nil?
+      cache_key = "cribl_total_ranking"
+      sql = "SELECT * FROM total_ranking"
+    else
+      cache_key = "cribl_total_ranking_#{user_id}"
+      sql = "SELECT * FROM total_ranking WHERE id = #{user_id}"
+    end
+
+    result = Discourse.cache.fetch(cache_key, expires_in: 1.hours) do
+      return self.run_query(sql)
+    end
+  end
+
   def self.custom(user_id)
 
     start_date = SiteSetting.cribl_leaderboard_custom_start_date
