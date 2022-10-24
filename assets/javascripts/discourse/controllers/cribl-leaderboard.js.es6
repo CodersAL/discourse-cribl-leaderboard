@@ -13,11 +13,9 @@ export default Controller.extend({
 
   @discourseComputed('page', 'period')
   hasParams(page, period) {
-    if (page && period) {
-      return true;
-    } else {
-      return false;
-    }
+    if(period == null)
+      this.set('period', 'quarter');
+    return true;
   },
 
   @action

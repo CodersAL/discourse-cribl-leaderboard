@@ -1,0 +1,10 @@
+DROP VIEW IF EXISTS leaderboard_drop_views CASCADE;
+DROP VIEW IF EXISTS leaderboard_present_view CASCADE;
+DROP VIEW IF EXISTS leaderboard_quarter_points_view CASCADE;
+DROP VIEW IF EXISTS leaderboard_quarter_ranking_view CASCADE;
+DROP VIEW IF EXISTS leaderboard_todays_points_view CASCADE;
+DROP VIEW IF EXISTS leaderboard_todays_ranking_view CASCADE;
+DROP VIEW IF EXISTS leaderboard_todays_ranking_with_move_view CASCADE;
+DROP VIEW IF EXISTS leaderboard_total_ranking_view CASCADE;
+DROP VIEW IF EXISTS leaderboard_yesterdays_points_view CASCADE;
+DROP VIEW IF EXISTS leaderboard_yesterdays_ranking_view CASCADE;

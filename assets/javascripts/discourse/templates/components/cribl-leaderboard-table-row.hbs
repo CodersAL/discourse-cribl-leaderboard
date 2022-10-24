@@ -10,14 +10,4 @@
   </a>
 </td>
 
-{{#if isTodays}}
-  <td class='relative-rank {{displayRelativeRank.class}}'>
-    <span class='number'>{{displayRelativeRank.rank}}</span>
-    <span class='icon'>{{d-icon displayRelativeRank.icon}}</span>
-  </td>
-{{/if}}
-
 <td class='points'>{{item.points}}</td>
-<td class='timestamp'>
-  {{format-date item.timestamp format='tiny'}}
-</td>

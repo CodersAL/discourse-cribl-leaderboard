@@ -6,6 +6,7 @@ en:
         today: 'Today'
         quarter: 'Current Quarter'
         custom: 'Custom'
+        all_time: 'All Time'
       fields:
         rank: 'Rank'
         relative_rank: 'Relative Rank'
@@ -16,3 +17,4 @@ en:
         points: 'points'
       no_results: 'No results found.'
       hint_alert: 'Select a period from the navigation tabs above to view leaderboard statistics.'
+      all_time: 'All Time'

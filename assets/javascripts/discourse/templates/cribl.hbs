@@ -4,20 +4,14 @@
     <li>
       {{#link-to
         'cribl.leaderboard'
-        (query-params page=0 period='today')
-      }}{{i18n 'cribl_leaderboard.nav.today'}}{{/link-to}}
-    </li>
-    <li>
-      {{#link-to
-        'cribl.leaderboard'
         (query-params page=0 period='quarter')
       }}{{i18n 'cribl_leaderboard.nav.quarter'}}{{/link-to}}
     </li>
     <li>
       {{#link-to
         'cribl.leaderboard'
-        (query-params page=0 period='custom')
-      }}{{i18n 'cribl_leaderboard.nav.custom'}}{{/link-to}}
+        (query-params page=0 period='all_time')
+      }}{{i18n 'cribl_leaderboard.nav.all_time'}}{{/link-to}}
     </li>
   </ul>
 </nav>

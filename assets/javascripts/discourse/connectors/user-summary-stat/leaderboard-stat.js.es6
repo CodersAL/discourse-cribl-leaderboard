@@ -9,7 +9,7 @@ export default {
   setupComponent(args, component) {
     this.set('classNames', ['linked-stat']);
 
-    ajax(`/cribl/leaderboard.json?period=today&user_id=${args.user.id}`)
+    ajax(`/cribl/leaderboard.json?user_id=${args.user.id}`)
       .then(({ data }) => {
         const points = data[0]?.points;
 

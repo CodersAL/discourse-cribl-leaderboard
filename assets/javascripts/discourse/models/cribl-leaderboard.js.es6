@@ -9,7 +9,7 @@ Leaderboard.reopenClass({
     let filters = [];
 
     if (params.period) {
-      filters.push(`period=${params.period}`);
+      filters.push(`page=${params.page}`);
     }
 
     if (params.page) {
@@ -45,7 +45,7 @@ Leaderboard.reopenClass({
         user: {
           username: item.username,
           name: item.name,
-          avatar_template: item.avatar_template.replace('{size}', '75'),
+          avatar_template: item.avatar_template?.replace('{size}', '75'),
           path: `/u/${item.username}`,
         },
         rank: item.mrank,

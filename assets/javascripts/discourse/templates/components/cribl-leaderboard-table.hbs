@@ -13,21 +13,9 @@
           labelKey='cribl_leaderboard.fields.name'
           automatic=true
         }}
-        {{#if isTodays}}
-          {{table-header-toggle
-            field='relativeRank'
-            labelKey='cribl_leaderboard.fields.relative_rank'
-            automatic=true
-          }}
-        {{/if}}
         {{table-header-toggle
           field='points'
           labelKey='cribl_leaderboard.fields.points'
-          automatic=true
-        }}
-        {{table-header-toggle
-          field='timestamp'
-          labelKey='cribl_leaderboard.fields.timestamp'
           automatic=true
         }}
       </thead>
